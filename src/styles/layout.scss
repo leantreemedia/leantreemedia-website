@@ -1,0 +1,288 @@
+$dark-color: #2C3E50;
+$primary-color: #2ECC71;
+$dark-primary-color: #27AE60;
+$offwhite-color: #ecf0f1;
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, input, textarea {
+  font-family: "Quicksand", sans-serif;
+  color: $dark-color;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $dark-color;
+  text-decoration: none;
+}
+
+input, textarea {
+  display: block;
+  appearance: none;
+  font-size: 1rem;
+  padding: 15px 20px;
+  min-width: 100%;
+  border: 2px solid #2c3d50;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  transition: all 0.3s;
+}
+
+textarea {
+  resize: none;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: $primary-color;
+}
+
+section {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-width: 100%;
+  min-height: 800px;
+  padding: 20px 0;
+}
+
+section .inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section.hero {
+  height: 100vh;
+  padding-top: 50px;
+  background-color: $offwhite-color;
+}
+
+section.about {
+  background-color: $dark-primary-color
+}
+
+.two-cols {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  column-gap: 30px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 20px;
+  background-color: white;
+}
+
+.logo-icon > svg {
+  fill: $primary-color;
+  max-width: 300px;
+}
+
+.logo-text > h1 {
+  font-weight: bold;
+  color: $dark-color;
+}
+
+.header-logo .logo {
+  display: flex;
+  width: fit-content;
+}
+
+.header-logo .logo .logo-icon {
+  width: 50px;
+  margin-right: 10px;
+  transform-origin: center bottom;
+}
+
+.header-logo .logo:hover .logo-icon {
+  animation: 0.3s ease-in-out 0s 1 normal wind-logo-beginning, 1s ease-in-out 0.3s infinite normal wind-logo-continue;
+}
+
+.header-cols {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+}
+
+ul.header-nav {
+  display: flex;
+  justify-content: center;
+}
+
+ul.header-nav > li {
+  display: block;
+}
+
+ul.header-nav > li > a {
+  display: block;
+  color: $dark-color;
+  padding: 10px 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 20px;
+  transition: all 0.1s;
+}
+
+ul.header-nav > li > a:hover {
+  color: white;
+  background: $primary-color;
+}
+
+header .highlight {
+  text-align: right;
+}
+
+header .highlight > a {
+  display: inline-block;
+  color: white;
+  background: $primary-color;
+  padding: 15px 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+a.button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+}
+
+a.button.button-primary {
+  color: white;
+  background: $primary-color;
+}
+a.button.button-primary:hover {
+  transform: scale(1.05);
+  box-shadow: $dark-primary-color 4px 4px;
+}
+
+a.button.button-secondary {
+  border-color: $dark-color;
+}
+
+a.button.button-secondary:hover {
+  transform: scale(1.05);
+  background-color: $dark-color;
+  color: white;
+}
+
+header .highlight > a:hover {
+  transform: scale(1.05);
+  box-shadow: $dark-primary-color 4px 4px;
+}
+
+.hero-background {
+  pointer-events: none;
+}
+
+.hero-text > h1 {
+  font-size: 4rem;
+  margin: 0;
+  line-height: 1;
+}
+
+.underlined {
+  display: inline-block;
+  position: relative;
+}
+
+.underlined > span {
+  position: relative;
+  z-index: 2;
+}
+
+.underlined::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.2em;
+  background-color: $primary-color;
+  z-index: 1;
+  bottom: 0px
+}
+
+.button-group {
+  margin-top: 40px;
+}
+
+.button-group .button-primary {
+  margin-right: 20px;
+}
+
+.contact-form {
+  padding: 50px 30px;
+  background-color: white;
+  box-shadow: 0px 0px 20px 2px #bfbfbf;
+  border-radius: 20px;
+}
+
+.contact-form .inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+
+.contact-form h1 {
+  font-size: 2rem;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.bush, .round-tree, .sharp-tree, .land {
+  min-width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes wind-blown {
+  0%   { transform: skewX(0deg); }
+  10%  { transform: skewX(-15deg); }
+  15%  { transform: skewX(5deg); }
+  20%  { transform: skewX(0deg); }
+  80%  { transform: skewX(0deg); }
+  85%  { transform: skewX(-5deg); }
+  90%  { transform: skewX(0deg); }
+  100% { transform: skewX(0deg); }
+}
+
+@keyframes wind-logo-beginning {
+  0%  { transform: skewX(0deg); }
+  100% { transform: skewX(-10deg); }
+}
+
+@keyframes wind-logo-continue {
+  0%  { transform: skewX(-10deg); }
+  50%  { transform: skewX(-6deg); }
+  100% { transform: skewX(-10deg); }
+}
+
+.tree-group {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  animation-name: wind-blown;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out
+}
