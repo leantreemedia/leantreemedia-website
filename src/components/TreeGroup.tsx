@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Bush from './objects/bush';
+import Bush from './objects/Bush';
 import RoundTree from './objects/RoundTree';
 import SharpTree from './objects/SharpTree';
 
