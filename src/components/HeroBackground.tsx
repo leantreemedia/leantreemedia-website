@@ -3,7 +3,7 @@ import Land from './objects/Land';
 import TreeGroup from './TreeGroup';
 
 const HeroBackground = () => (
-  <div className='hero-background' style={{ position: 'absolute', top: 0, right: 0, width: '100%', height: '100%', overflow: 'hidden', minWidth: '1200px' }} >
+  <div className='hero-background'>
     <div className='forest'>
       <TreeGroup zIndex={70} delay={0.25} style={{ right: '0%', bottom: '0%', minWidth: '12%' }}/>
       <TreeGroup zIndex={60} delay={0.2} style={{ right: '16%', bottom: '-10px', minWidth: '8%'}}/>

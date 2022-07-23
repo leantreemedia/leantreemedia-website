@@ -4,10 +4,12 @@ import HeroBackground from "../components/HeroBackground"
 import Logo from "../components/objects/Logo"
 
 const IndexPage = () => {
+  const [mobileNav, setMobileNav] = React.useState(false);
+
   return (
     <main>
       <title>Leantree Media</title>
-      <header>
+      <header className="main-header">
         <div className="header-cols">
           <div className="header-logo">
             <Logo />
@@ -20,6 +22,29 @@ const IndexPage = () => {
             </ul>
           </nav>
           <div className="highlight"><a href="#">Contact Us</a></div>
+        </div>
+      </header>
+      <header className="mobile-header">
+        <div className="header-cols">
+          <div className="header-logo">
+            <Logo />
+          </div>
+          <div className="mobile-menu">
+            <div className="highlight"><a href="#">Contact Us</a></div>
+            <button className="hamburger" onClick={(e) => setMobileNav(true)}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <nav style={{ display: mobileNav ? 'grid' : 'none'}}>
+              <button className="close-nav" onClick={(e) => setMobileNav(false)}><span></span><span></span></button>
+              <ul className="header-nav">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Projects</a></li>
+                <li><a href="#">Pricing</a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </header>
       <section className="hero">
